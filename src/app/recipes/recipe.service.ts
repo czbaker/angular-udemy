@@ -17,9 +17,19 @@ export class RecipeService {
     new Recipe(
       'Test Recipe #1',
       'This is just a test, yo.',
-      'https://www.cookingclassy.com/wp-content/uploads/2019/09/meatballs-21-600x900.jpg',
+      'https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_21/2870431/190524-classic-american-cheeseburger-ew-207p-2870431.jpg',
       [
         new Ingredient('Hamburger', 1),
+        new Ingredient('Tomato', 1),
+        new Ingredient('Bun', 1)
+      ]
+    ),
+    new Recipe(
+      'Test Recipe #2',
+      'This is still just a test, yo.',
+      'https://www.cookingclassy.com/wp-content/uploads/2019/09/meatballs-21-600x900.jpg',
+      [
+        new Ingredient('Spaghetti', 1),
         new Ingredient('Sauce', 1),
       ]
     )
@@ -27,6 +37,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipeById(index: number) {
+    return this.recipes[index];
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
