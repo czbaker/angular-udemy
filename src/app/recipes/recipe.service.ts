@@ -11,28 +11,13 @@ export class RecipeService {
   // Inject service
   constructor(private slService: ShoppingListService) { }
 
-  // Recipe List
-  private recipes: Recipe[] = [
-    new Recipe(
-      'Test Recipe #1',
-      'This is just a test, yo.',
-      'https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_21/2870431/190524-classic-american-cheeseburger-ew-207p-2870431.jpg',
-      [
-        new Ingredient('Hamburger', 1),
-        new Ingredient('Tomato', 1),
-        new Ingredient('Bun', 1)
-      ]
-    ),
-    new Recipe(
-      'Test Recipe #2',
-      'This is still just a test, yo.',
-      'https://www.cookingclassy.com/wp-content/uploads/2019/09/meatballs-21-600x900.jpg',
-      [
-        new Ingredient('Spaghetti', 1),
-        new Ingredient('Sauce', 1),
-      ]
-    )
-  ];
+  // Init empty Recipe List
+  private recipes: Recipe[] = [];
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     return this.recipes.slice();
