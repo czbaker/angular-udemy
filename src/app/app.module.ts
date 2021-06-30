@@ -16,15 +16,19 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { RecipeHomeComponent } from './recipes/recipe-home/recipe-home.component';
+import { AuthComponent } from './auth/auth.component';
+import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
 
 // Services
 import { ShoppingListService } from "./shopping-list/shopping-list.service";
+import { RecipeService } from "./recipes/recipe.service";
 
 // Directives
 import { DropdownDirective } from "./shared/dropdown.directive";
-import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
-import { RecipeService } from "./recipes/recipe.service";
-import { AuthComponent } from './auth/auth.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -39,7 +43,8 @@ import { AuthComponent } from './auth/auth.component';
     DropdownDirective,
     RecipeHomeComponent,
     RecipeEditComponent,
-    AuthComponent
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
